@@ -15,13 +15,13 @@ Date:    2021-02-01
 _start:
 
 // Store data in registers
-LDR	    R3, =COUNTER		// Initialize a countdown value
-
+LDR	    R2, =COUNTER		 // Initialize a countdown value
+LDR     R3, [R2]       // Storing contents of R2 in R3
 
 TOP:
 SUB	    R3, R3, #1	    // Decrement the countdown value
-CMP	    R3, #0		      // Compare the countdown value to 0
-BGE	    TOP			        // Branch to top under certain conditions
+CMP	    R3, #0		       // Compare the countdown value to 0
+BGE	    TOP			         // Branch to top under certain conditions
 
 // End program 
 _stop:
