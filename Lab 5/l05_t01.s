@@ -12,7 +12,7 @@ R3: Address of end of list
 Author:  Nish Tewari 
 ID:      190684430
 Email:   tewa4430@mylaurier.ca
-Date:    2020-12-14
+Date:    2021-02-25
 -------------------------------------------------------
 */
 .org	0x1000	       // Start at memory location 1000
