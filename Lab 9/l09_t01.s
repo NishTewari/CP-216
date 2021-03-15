@@ -4,13 +4,13 @@ swap_array.s
 Working with stack frames and local variables.
 -------------------------------------------------------
 Author: Nish Tewari 
-ID:		190684430
+ID:	190684430
 Email:  tewa4430@mylaurier.ca 
 Date:    2021-03-15
 ---------------------------------
 */
 .org    0x1000   	// Start at memory location 1000
-.text  				    // Code section
+.text  			// Code section
 .global _start
 _start:
 
@@ -47,16 +47,15 @@ Uses:
   R3 - value to swap
 -------------------------------------------------------
 */
-
 	// your code here - get parameters, set aside local storage, preserve registers
-	STMFD      SP!, {FP, LR}  // push frame pointer and link register onto the stack
-    MOV     FP, SP          // save current stack top to frame pointer
-    SUB     SP, SP, #4      // set aside space for local variable temp
-    STMFD   SP!, {R0-R3}    // preserve other registers
+	STMFD     SP!, {FP, LR}   // push frame pointer and link register onto the stack
+    	MOV       FP, SP          // save current stack top to frame pointer
+    	SUB       SP, SP, #4      // set aside space for local variable temp
+    	STMFD     SP!, {R0-R3}    // preserve other registers
 	
 	LDR       R0, [FP, #8]
-	LDR 	    R1, [FP. #12]
-	LDR 	    R2, [FP, #16]
+	LDR 	  R1, [FP. #12]
+	LDR 	  R2, [FP, #16]
 
 	// offsets must be multiplied by 4 to get proper number of bytes
 	LSL       R1, R1, #2      // multiple first offset by 4 (shift left 2 bits)
@@ -73,8 +72,8 @@ Uses:
 
 	// your code here - pop registers, remove local storage, reset program counter
 	LDMFD     SP!, {R0-R3}    // pop preserved registers
-  ADD       SP, SP, #4      // remove local storage
-  LDMFD     SP!, {FP, PC}   // pop frame pointer and program counter
+  	ADD       SP, SP, #4      // remove local storage
+  	LDMFD     SP!, {FP, PC}   // pop frame pointer and program counter
 
 //-------------------------------------------------------
 .data
@@ -83,4 +82,3 @@ Data:	.word  4,5,-9,0,3,0,8,-7,12    // The list of data
 _Data:    // End of list address
 
 .end
-	
