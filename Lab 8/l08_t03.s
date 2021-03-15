@@ -13,23 +13,23 @@ Date:    2021-03-15
 .equ SIZE, 80
 
 .org    0x1000    	// Start at memory location 1000
-.text  				      // Code section
+.text  			// Code section
 .global _start
 _start:
 
 	// push parameters onto the stack
-	MOV		  R3, #SIZE
+	MOV	R3, #SIZE
 	STMFD   SP!, {R3}
-	LDR		  R3, =second
+	LDR	R3, =second
 	STMFD   SP!, {R3}
-	LDR		  R3, =first
-	STMFD	  SP!, {R3}
-	LDR		  R3,  =common
+	LDR	R3, =first
+	STMFD	SP!, {R3}
+	LDR	R3, =common
 	STMFD   SP!, {R3}
 	
 	// clean up the stack
-  BL      FindCommon
-	ADD		  SP, SP, #16
+ 	BL      FindCommon
+	ADD	SP, SP, #16
 
 
 _stop:
@@ -62,9 +62,9 @@ Uses:
 */
 
 	// set up stack
-	STMFD 	SP!, {FP, LR}
+	STMFD 	  SP!, {FP, LR}
 	MOV 	  FP, SP
-	STMFD 	SP!, {R1-R5}
+	STMFD 	  SP!, {R1-R5}
 	LDR 	  R0, [FP, #16]
 	LDR 	  R1, [FP, #12]
 	LDR 	  R2, [FP, #8]
