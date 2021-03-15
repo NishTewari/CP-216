@@ -4,7 +4,7 @@ l07_t02.s
 Subroutines for determining if a string is a palindrome.
 -------------------------------------------------------
 Author:	Nish Tewari
-ID:		  190684430
+ID: 190684430
 Email:	tewa4430@mylaurier.ca
 Date:	2021-03-11
 -------------------------------------------------------
