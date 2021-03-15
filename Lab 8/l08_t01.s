@@ -4,7 +4,7 @@ strncmp.s
 Working with stack frames.
 -------------------------------------------------------
 Author: Nish Tewari  
-ID: 	  190684430
+ID: 190684430
 Email:	tewa4430@mylaurier.ca
 Date:   2021-03-15
 -------------------------------------------------------
@@ -13,11 +13,11 @@ Date:   2021-03-15
 .equ SIZE, 80
 
 .org    0x1000    	// Start at memory location 1000
-.text  				      // Code section
+.text  			// Code section
 .global _start
 _start:
 
-	MOV    R3, #SIZE   		  // Set the maximum comparison length
+	MOV    R3, #SIZE   	// Set the maximum comparison length
 	STMFD  SP!, {R3}        // Push the maximum length
 	LDR    R3, =second
 	STMFD  SP!, {R3}        // Push the second string address
