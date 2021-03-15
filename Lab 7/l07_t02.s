@@ -4,7 +4,7 @@ l07_t02.s
 Subroutines for determining if a string is a palindrome.
 -------------------------------------------------------
 Author:	Nish Tewari
-ID: 190684430
+ID:     190684430
 Email:	tewa4430@mylaurier.ca
 Date:	2021-03-11
 -------------------------------------------------------
@@ -16,7 +16,6 @@ _start:
 
 
 /** Tests */
-
 LDR    R4, =test1
 LDR    R5, =_test1 - 2
 BL     PrintString
@@ -51,13 +50,11 @@ _stop:
 B    _stop
 
 
-
 /** Constants */
 .equ UART_BASE, 0xff201000     // UART base address.
 .equ ENTER,     0x0a           // ENTER character.
 .equ VALID,     0x8000         // Valid data in UART mask.
 .equ DIFF,      'a' - 'A'      // Difference between upper and lower case.
-
 
 
 /** Functions */
