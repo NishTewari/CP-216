@@ -4,7 +4,7 @@ l07_t02.s
 Subroutines for determining if a string is a palindrome.
 -------------------------------------------------------
 Author:	Nish Tewari
-ID:		190684430
+ID:		  190684430
 Email:	tewa4430@mylaurier.ca
 Date:	2021-03-11
 -------------------------------------------------------
@@ -232,39 +232,39 @@ Returns:
 -------------------------------------------------------
 */
 STMFD 	SP!, {R4-R7, LR}
-MOV 	R0, #0		// Default to false
-CMP 	R4, R5		
+MOV 	  R0, #0		  // Default to false
+CMP 	  R4, R5		
 MOVEQ 	R0, #1	
 MOVGT 	R0, #1	
-CMP 	R0, #1		
-BEQ 	_Palindrome	
+CMP 	  R0, #1		
+BEQ 	  _Palindrome	
 
-LDRB 	R2, [R4]	  // Check if the first character is alphanumeric
-BL 		isLetter
-CMP 	R0, #0		  // Is the current letter *not* alphanumeric?
-ADDEQ 	R4, #1		// Move to next character
-BLEQ 	Palindrome	// Recursive call
-BEQ 	_Palindrome	
+LDRB 	  R2, [R4]	  // Check if the first character is alphanumeric
+BL 		  isLetter
+CMP 	  R0, #0		  // Is the current letter *not* alphanumeric?
+ADDEQ 	R4, #1		  // Move to next character
+BLEQ 	  Palindrome	// Recursive call
+BEQ 	  _Palindrome	
 
-LDRB 	R2, [R5]	  // Check if the first character is alphanumeric
-BL 		isLetter
-CMP 	R0, #0		  // Is the last letter *not* alphanumeric?
-SUBEQ 	R5, #1		// Move last character a bit backwards
-BLEQ 	Palindrome	// Recursive call
-BEQ 	_Palindrome	
+LDRB 	  R2, [R5]	  // Check if the first character is alphanumeric
+BL 		  isLetter
+CMP 	  R0, #0		  // Is the last letter *not* alphanumeric?
+SUBEQ 	R5, #1		  // Move last character a bit backwards
+BLEQ 	  Palindrome	// Recursive call
+BEQ 	  _Palindrome	
 
-LDRB 	R2, [R4]	  // Convert first character to lowercase
-BL 		toLower
-MOV 	R6, R2
-LDRB 	R2, [R5]	  // Convert last character to lowercase
-BL 		toLower
-MOV 	R7, R2
-CMP 	R6, R7		
+LDRB 	  R2, [R4]	  // Convert first character to lowercase
+BL 		  toLower
+MOV 	  R6, R2
+LDRB 	  R2, [R5]	  // Convert last character to lowercase
+BL 		  toLower
+MOV 	  R7, R2
+CMP 	  R6, R7		
 ADDEQ 	R4, #1	
 SUBEQ 	R5, #1	
-BLEQ 	Palindrome	
-MOVNE 	R0, #0		// Not a palindrome
-BNE 	_Palindrome	
+BLEQ 	  Palindrome	
+MOVNE 	R0, #0		  // Not a palindrome
+BNE 	  _Palindrome	
 
 _Palindrome:
 LDMFD SP!, {R4-R7, PC}
