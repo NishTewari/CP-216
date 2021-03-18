@@ -10,12 +10,12 @@ Date:    2021-03-15
 -------------------------------------------------------
 */
 .org    0x1000    	// Start at memory location 1000
-.text  				      // Code section
+.text  			// Code section
 .global _start
 _start:
 
 	// your code here
-	LDR		R3, =Max
+	LDR	R3, =Max
 	STMFD 	SP!,{R3}
 	
 	LDR 	R3, =Min
@@ -57,7 +57,7 @@ Uses:
 */
 	STMFD  SP!, {FP, LR}  		// push frame pointer and link register onto the stack
 	MOV    FP, SP         		// Save current stack top to frame pointer
-								            // allocate local storage (none)
+					// allocate local storage (none)
 	STMFD  SP!, {R0-R4}   		// preserve other registers
 
 	LDR    R0, [FP, #8]   		// Get address of start of list
@@ -66,7 +66,7 @@ Uses:
 	LDR    R1, [FP, #12]  		// get address of end of list
 
 MinMaxLoop:
-	CMP    R0, R1  				    // Compare addresses
+	CMP    R0, R1  			// Compare addresses
 	BEQ    _MinMax
 	LDR    R4, [R0], #4
 	CMP    R4, R2
@@ -83,11 +83,11 @@ _MinMax:
 	STR    R2, [R0]
 
 	LDMFD  SP!, {R0-R4}   		// pop preserved registers
-								            // deallocate local storage (none was allocated)
+					// deallocate local storage (none was allocated)
 	LDMFD  SP!, {FP, PC}  		// pop frame pointer and program counter
 
 //-------------------------------------------------------
-.data  		   // Data section
+.data  		// Data section
 .align
 Data:	.word    4,5,-9,0,3,0,8,-7,12    // The list of data
 _Data:    	// End of list address
