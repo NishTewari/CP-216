@@ -27,7 +27,7 @@ _start:
 	LDR 	R3, =Data
 	STMFD 	SP!, {R3}
 	
-	BL 		MinMax
+	BL 	MinMax
 	ADD 	SP, SP, #16
 
 
