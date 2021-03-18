@@ -4,7 +4,7 @@ strncmp.s
 Working with stack frames.
 -------------------------------------------------------
 Author: Nish Tewari  
-ID: 190684430
+ID:     190684430
 Email:	tewa4430@mylaurier.ca
 Date:   2021-03-15
 -------------------------------------------------------
@@ -84,12 +84,11 @@ _strncmp:
 // pop stack
 	LDMFD 	SP!, {R1-R5}
 	LDMFD 	SP!, {FP, PC}
-
+	
+//If r0 is less than 0 then the first string will come first!
+//If r0 is greater than 0 then the second string will come first! 
 //-------------------------------------------------------
 .data
-
 first:	.asciz "aaaa"
-
 second:	.asciz "aaab"
-
 .end
