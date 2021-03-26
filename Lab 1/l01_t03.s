@@ -10,7 +10,7 @@ Date:    2021-01-18
 -------------------------------------------------------
 */
 .org    0x1000  // Start at memory location 1000
-.text  // Code section
+.text           // Code section
 .global _start
 _start:
 
