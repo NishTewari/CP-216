@@ -14,22 +14,22 @@ Date:    2021-01-28
 .global _start
 _start:
 
-.text	              // code section
+.text	                
 // Copy contents of first element of Vec1 to Vec2
-LDR	    R0, =Vec1
-LDR	    R1, =Vec2
-LDR   	R2, [R0]
-STR	    R2, [R1]
+  LDR	    R0, =Vec1
+  LDR	    R1, =Vec2
+  LDR   	R2, [R0]
+  STR	    R2, [R1]
 // Copy contents of second element of Vec1 to Vec2
-ADD	    R0, R0, #4  // Changed from #2 to #4 
-ADD	    R1, R1, #4  // Changed from #2 to #4 
-LDR	    R2, [R0]
-STR	    R2, [R1]
+  ADD	    R0, R0, #4  // Changed from #2 to #4 
+  ADD	    R1, R1, #4  // Changed from #2 to #4 
+  LDR	    R2, [R0]
+  STR	    R2, [R1]
 // Copy contents of second element of Vec1 to Vec2
-ADD	    R0, R0, #4  // Changed R1 to R0 
-ADD	    R1, R1, #4
-LDR	    R2, [R0]
-STR	    R2, [R1]    // Changed R2 to R1
+  ADD	    R0, R0, #4  // Changed R1 to R0 
+  ADD	    R1, R1, #4
+  LDR	    R2, [R0]
+  STR	    R2, [R1]    // Changed R2 to R1
 
 // End program
 _stop:
@@ -43,5 +43,4 @@ Vec1:	.word	1, 2, 3
 .bss	              // Uninitialized data section
 
 Vec2:	.space	6
-
 .end
