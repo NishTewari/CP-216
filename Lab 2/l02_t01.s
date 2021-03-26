@@ -10,7 +10,7 @@ Date:    2021-01-28
 -------------------------------------------------------
 */
 .org	0x1000	// Start at memory location 1000
-.text  // Code section
+.text         // Code section
 .global _start
 _start:
 
@@ -32,9 +32,9 @@ B _stop
 
 A:	.word	4
 B:	.word	8
+ 
+.bss	              // Uninitialized data section
 
-.bss	    // Uninitialized data section
-
-Result:	.space 4	// Set aside 4 bytes for result
+Result:	.space 4	  // Set aside 4 bytes for result
 
 .end
